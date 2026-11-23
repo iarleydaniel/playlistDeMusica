@@ -27,3 +27,29 @@ class ListaDuplamenteCircular:
             self.inicio.anterior = novo
         self.tamanho += 1
         return novo
+
+    def buscar_no(self, codigo):
+        if self.lista_vazia():
+            return None
+        atual = self.inicio
+        while True:
+            if atual.musica.codigo == codigo:
+                return atual
+            atual = atual.proximo
+            if atual == self.inicio:
+                break
+        return None
+
+    def remover(self, codigo):
+        no = self.buscar_no(codigo)
+        if no is None:
+            return None
+        if self.tamanho == 1:
+            self.inicio = None
+        else:
+            no.anterior.proximo = no.proximo
+            no.proximo.anterior = no.anterior
+            if no == self.inicio:
+                self.inicio = no.proximo
+        self.tamanho -= 1
+        return no.musica
