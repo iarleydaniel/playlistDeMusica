@@ -11,7 +11,7 @@ class ListaDuplamenteCircular:
         self.tamanho = 0
 
     def lista_vazia(self):
-        return self.inicio is None        return self.inicio is None
+        return self.inicio is None
 
     def inserir_fim(self, musica):
         novo = NoLista(musica)
@@ -71,3 +71,15 @@ class ListaDuplamenteCircular:
             return self.inicio.anterior
         return no_atual.anterior
 
+    def __iter__(self):
+        if self.esta_vazia():
+            return
+        atual = self.inicio
+        while True:
+            yield atual.musica
+            atual = atual.proximo
+            if atual == self.inicio:
+                break
+
+    def __len__(self):
+        return self.tamanho
