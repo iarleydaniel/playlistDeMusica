@@ -72,7 +72,7 @@ class ListaDuplamenteCircular:
         return no_atual.anterior
 
     def __iter__(self):
-        if self.esta_vazia():
+        if self.lista_vazia():
             return
         atual = self.inicio
         while True:
