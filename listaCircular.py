@@ -53,3 +53,21 @@ class ListaDuplamenteCircular:
                 self.inicio = no.proximo
         self.tamanho -= 1
         return no.musica
+
+    def primeiro_no(self):
+        return self.inicio
+
+    def proximo_no(self, no_atual):
+        if self.lista_vazia():
+            return None
+        if no_atual is None:
+            return self.inicio
+        return no_atual.proximo
+
+    def anterior_no(self, no_atual):
+        if self.lista_vazia():
+            return None
+        if no_atual is None:
+            return self.inicio.anterior
+        return no_atual.anterior
+
