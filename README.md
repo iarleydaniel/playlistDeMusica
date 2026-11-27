@@ -151,7 +151,7 @@ O programa possui a opção **12 — Executar teste de carga**. Informe a quanti
 ### Resultados obtidos
 
 | Registros inseridos | Registros na Hash | Registros na AVL | Altura da AVL |
-|---:|---:|---:|---:|---:|
+|---:|---:|---:|---:|
 | 1.000 | 1.000 | 1.000 | 10 |
 | 5.000 | 5.000 | 5.000 | 13 |
 | 10.000 | 10.000 | 10.000 | 14 |
